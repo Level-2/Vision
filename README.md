@@ -131,9 +131,9 @@ You can change the name of the variable that the user is stored in using the `in
 
 ```php
 $template = new \Vision\Template('<template xmlns:tpl="tpl">
-		<tpl:user>
-			<p>Your name is <tpl:item.name /></p>
-			<p>Your type is <tpl:item.type /></p>
+		<tpl:user into="this">
+			<p>Your name is <tpl:this.name /></p>
+			<p>Your type is <tpl:this.type /></p>
 		</tpl:user>			
 </template>');
 ```
