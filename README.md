@@ -79,8 +79,8 @@ $user->type = 'admin';
 
 				
 $template = new \Vision\Template('<template xmlns:tpl="tpl">
-	<p>The user's name is <tpl:user.name /></p>
-	<p>The user's type is <tpl:user.type /></p>
+	<p>User name is <tpl:user.name /></p>
+	<p>User type is <tpl:user.type /></p>
 </template>');
 
 $template->addHook('user.*', new \Vision\Hook\Object($user));
@@ -92,8 +92,8 @@ echo $template->output();
 Which will print:
 
 ```php
-<p>The user's name is Tom</p>
-<p>The user's type is admin</p>
+<p>User name is Tom</p>
+<p>User type is admin</p>
 ```
 
 
@@ -123,8 +123,8 @@ echo $template->output();
 The user object will be referenced as `item` inside the `<tpl:user>` tag and the output will be the same as before:
 
 ```php
-<p>The user's name is Tom</p>
-<p>The user's type is admin</p>
+<p>User name is Tom</p>
+<p>User type is admin</p>
 ```
 
 You can change the name of the variable that the user is stored in using the `into` attribute. For example, to rename `item` to `this` you can use:
@@ -144,7 +144,7 @@ Note that this is all defined in the template and you don't need to make any cha
 
 ### Calling functions
 
-Imagine the user's type was accessible via a method: `$suer->getType()` rather than  a property `$user->type`. Vision uses the Uniform Access Principle and doesn't discriminate between public methods and properties:
+Imagine User type was accessible via a method: `$suer->getType()` rather than  a property `$user->type`. Vision uses the Uniform Access Principle and doesn't discriminate between public methods and properties:
 
 ```php
 $template = new \Vision\Template('<template xmlns:tpl="tpl">
