@@ -129,13 +129,15 @@ The user object will be referenced as `item` inside the `<tpl:user>` tag and the
 
 You can change the name of the variable that the user is stored in using the `into` attribute. For example, to rename `item` to `this` you can use:
 
-
+```php
 $template = new \Vision\Template('<template xmlns:tpl="tpl">
 		<tpl:user>
 			<p>Your name is <tpl:item.name /></p>
 			<p>Your type is <tpl:item.type /></p>
 		</tpl:user>			
 </template>');
+```
+
 
 Note that this is all defined in the template and you don't need to make any changes to the php code to achieve this.
 
