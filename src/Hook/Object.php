@@ -15,7 +15,7 @@ class Object implements \Vision\Hook {
 		foreach ($parts as $ref) {
 			if (isset($obj->$ref)) $obj = $obj->$ref;
 			else if (is_callable([$obj, $ref])) return call_user_func_array([$obj, $ref], $args);
-			else throw new \Exception('Object ' . get_class($obj) . ' does not have property ' . $ref);
+			else throw new \Exception('Object ' . get_class($obj) . ' does not have property ' . $ref . ':: ' . print_r($obj, true));
 		}
 		//If the final object is a DateTime, print a date. Why doesn't DateTime implement __toString()?
 		return $obj instanceof \DateTime ? $obj->format('Y-m-d H:i:s') : $obj;
